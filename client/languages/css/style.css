@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    width: 600px;
+    height: 500px;
+    margin: 50px auto;
+    background: rgba(217, 169, 169, 0.6);
+    box-shadow: 3px 9px 9px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.wrapper {
+    width: 600px;
+    height: 450px;
+    margin: 50px auto;
+    background: rgba(255, 250, 250, 0.671);
+    border-radius: 20px 20px 50px 50px;
+}
+
+.logo {
+    font-family: 'Mulish';
+    font-size: 20px;
+    color: #00153d;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.text-inp {
+    padding-left: 10px;
+    width: 500px;
+    height: 40px;
+    outline: none;
+    border-radius: 17px;
+    border: 3px solid rgba(217, 169, 169, 0.6);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Inter';
+    margin: 50px 40px 30px 40px;
+}
+
+.vivod {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    color: #00153d;
+    margin: 10px 0 0 45px;
+}
+
+.vivod-container {
+    width: 340px;
+    height: 30px;
+    outline: none;
+    border-radius: 14px;
+    border: 3px solid rgba(217, 169, 169, 0.6);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: rgb(255, 255, 255);
+    font-family: 'Mulish';
+    font-size: 15px;
+    color: #00153d;
+    margin: auto;
+}
+
+.offer-verification {
+    width: 307px;
+    height: 37px;
+    background: rgba(217, 169, 169, 0.6);
+    border: 3px solid rgba(217, 169, 169, 0.6);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    margin: 90px 150px 0 150px;
+}
+
+.text-check {
+    text-align: center;
+    color: #00153d;
+    font-family: 'Inter';
+    margin-top: 9px;
+}
+
+.text {
+    font-family: 'Montserrat';
+    color: #00153d;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 11px;
+}
