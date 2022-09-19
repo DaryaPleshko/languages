@@ -16,25 +16,23 @@ const usersCreatedDB = async (name, email, password) => {
 
         return objInfo;
     } catch (error) {
-        console.log('error in userыCreateDB');
+        console.log('error in usersCreateDB');
         await client.query('ROLLBACK');
     }
-
 }
 
 
-// const readUserDB = async (email, password) => {
-//     const connect = await pool.connect();
+const readUserDB = async (email, password) => {
+    const client = await pool.connect();
 
-//     const sql = `        
-//     SELECT s.id, s.name, s.surname, i.age, i.city, i.birth 
-//     FROM students as s 
-//     JOIN students_info as i ON i.id = s.id 
-//     where s.id = $1`;
-//     const obj = (await connect.query(sql, [id])).rows;
-//     console.log(obj)
-//     return obj;
+        const sqlInfo = `
+        SELECT email, password FROM users WHERE email = $1 AND password = $2
+    `;
+        const objInfo = (await client.query(sqlInfo, [email, password])).rows;[{}]
 
-// }
+        if (!objInfo.length) throw new Error('Data does not exist');
 
-module.exports = { usersCreatedDB }
+        return objInfo;
+}
+
+module.exports = { usersCreatedDB, readUserDB }

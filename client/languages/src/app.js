@@ -4,8 +4,6 @@ const btnText = document.querySelector('.text-check');
 
 btn.addEventListener('mouseover', () => btn.style = 'background-color: rgba(192, 143, 143, 0.6)');
 btn.addEventListener('mouseout', () => btn.style = ' background-color: rgba(217, 169, 169, 0.6)');
-btnText.addEventListener('mouseover', () => btnText.style = 'font-size: 13px; margin-top: 11px;');
-btnText.addEventListener('mouseout', () => btnText.style = 'font-size: 16px');
 
 
 // const check = (inp) => {
