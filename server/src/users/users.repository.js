@@ -25,14 +25,29 @@ const usersCreatedDB = async (name, email, password) => {
 const readUserDB = async (email, password) => {
     const client = await pool.connect();
 
-        const sqlInfo = `
+    const sqlInfo = `
         SELECT email, password FROM users WHERE email = $1 AND password = $2
     `;
-        const objInfo = (await client.query(sqlInfo, [email, password])).rows;[{}]
+    const objInfo = (await client.query(sqlInfo, [email, password])).rows;[{}]
 
-        if (!objInfo.length) throw new Error('Data does not exist');
+    if (!objInfo.length) throw new Error('Data does not exist');
 
-        return objInfo;
+    return objInfo;
 }
 
-module.exports = { usersCreatedDB, readUserDB }
+const userGetDB = async () => {
+    const client = await pool.connect();
+    try {
+        const sqlInfo = `
+        SELECT name from users
+        `;
+        const objInfo = (await client.query(sqlInfo)).rows;
+
+        return objInfo;
+    } catch (error) {
+        console.log('error in userGetDB');
+    }
+
+}
+
+module.exports = { usersCreatedDB, readUserDB, userGetDB }

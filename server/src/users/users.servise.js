@@ -1,4 +1,4 @@
-const { usersCreatedDB, readUserDB } = require("./users.repository");
+const { usersCreatedDB, readUserDB, userGetDB } = require("./users.repository");
 
 const usersCreate = async (name, email, password) => {
     const userCreatedDB = await usersCreatedDB(name, email, password);
@@ -11,4 +11,9 @@ const getUsers = async (email, password) => {
 }
 
 
-module.exports = { usersCreate, getUsers }
+const getNameUser = async () => {
+    const userCreatedDB = await userGetDB();
+    return userCreatedDB;
+}
+
+module.exports = { usersCreate, getUsers, getNameUser }
