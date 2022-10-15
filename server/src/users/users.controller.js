@@ -1,5 +1,5 @@
 const express = require("express");
-const { usersCreate, getUsers, getNameUser } = require("./users.servise")
+const { usersCreate, getUsers } = require("./users.servise")
 
 const router = express.Router();
 
@@ -7,8 +7,8 @@ const router = express.Router();
 router.post("/register", async (req, res) => {
     try {
         const { name, email, password } = req.body;
+        console.log(name, email);
         const createdUser = await usersCreate(name, email, password);
-
         res.status(200).send(createdUser);
     } catch (error) {
         res.status(404).send(error.message);
@@ -24,15 +24,5 @@ router.post("/auth", async (req, res) => {
         res.status(404).send(error.message);
     }
 });
-
-
-router.get("/names", async (req, res) => {
-    try {
-        const gotUser = await getNameUser();
-        res.status(200).send(gotUser);
-    } catch (error) {
-        res.status(404).send(error.message);
-    }
-})
 
 module.exports = router
