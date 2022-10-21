@@ -8,14 +8,12 @@ const usersCreatedDB = async (name, email, password) => {
         `;
         const objInfo = (await connect.query(sqlInfo, [name, email, password])).rows;
         return objInfo;
-
 }
-
 
 const readUserDB = async (email, password) => {
     const connect = await pool.connect();
     const sqlInfo = `
-        SELECT email, password 
+        SELECT *
         FROM users 
         WHERE email = $1 
         AND password = $2
