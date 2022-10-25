@@ -17,7 +17,7 @@ app.use("/user", users);
 app.use("/history", history);
 
 app.use((error, req, res, next) => {
-    res.status(404).send(error.message);
+    res.status(404).send(error.message); 
 })
 
 module.exports = app;
