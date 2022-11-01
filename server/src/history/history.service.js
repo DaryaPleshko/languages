@@ -5,4 +5,4 @@ const historyCreate = async (history_id, history) => {
     return created;
 }
 
-module.exports = { historyCreate }
+module.exports = { historyCreate }          

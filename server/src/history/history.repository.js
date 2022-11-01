@@ -10,7 +10,7 @@ const createHistoryDB = async (history_id, history) => {
         return obj
     } catch (e) {
         console.log(`EXC IN createTaskDB ${e}`);
-        connect.query('ROLLBACK') 
+        connect.query('ROLLBACK')               
     } finally {
         connect.release()
     }
