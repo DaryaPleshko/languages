@@ -6,7 +6,6 @@ const router = express.Router();
 
 router.post("/register", async (req, res) => {
     try {
-        console.log("+");
         const { name, email, password } = req.body;
         console.log(name, email);
         const createdUser = await usersCreate(name, email, password);
